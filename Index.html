@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pathfinding Visualizer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔍 MazeMind</h1>
+        </header>
+        
+        <div class="controls">
+            <div class="control-group">
+                <label for="algorithm">Algorithm:</label>
+                <select id="algorithm">
+                    <option value="dijkstra">Dijkstra's Algorithm</option>
+                    <option value="astar">A* Search</option>
+                    <option value="bfs">Breadth-First Search</option>
+                    <option value="dfs">Depth-First Search</option>
+                </select>
+            </div>
+            
+            <div class="control-group">
+                <label for="speed">Speed:</label>
+                <select id="speed">
+                    <option value="10">Fast</option>
+                    <option value="50" selected>Normal</option>
+                    <option value="100">Slow</option>
+                </select>
+            </div>
+            
+            <div class="button-group">
+                <button id="visualize" class="btn btn-primary">Visualize Pathfinding</button>
+                <button id="clear-path" class="btn btn-secondary">Clear Path</button>
+                <button id="clear-walls" class="btn btn-danger">Clear Walls</button>
+                <button id="clear-all" class="btn btn-danger">Clear All</button>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <p><strong>Instructions:</strong> Click and drag to create walls. Click "Visualize Pathfinding" to start!</p>
+        </div>
+
+        <div class="grid-container">
+            <div class="grid" id="grid"></div>
+        </div>
+
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color start-color"></div>
+                <span>Start Node</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color end-color"></div>
+                <span>End Node</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color wall-color"></div>
+                <span>Wall</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color visited-color"></div>
+                <span>Visited</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color path-color"></div>
+                <span>Shortest Path</span>
+            </div>
+        </div>
+
+        <div class="stats" id="stats">
+            <div class="stat-item">
+                <span class="stat-label">Nodes Visited:</span>
+                <span class="stat-value" id="nodes-visited">0</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Path Length:</span>
+                <span class="stat-value" id="path-length">0</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Time Taken:</span>
+                <span class="stat-value" id="time-taken">0ms</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
